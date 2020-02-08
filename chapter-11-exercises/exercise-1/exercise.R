@@ -55,5 +55,10 @@ vehicles_2wd[vehicles_2wd$hwy == min(vehicles_2wd$hwy), "id" ]
 # of that make in that year.
 # You'll need to filter more (and do some selecting)!
 
+make_year_filter <- function(make_choice, year_choice) {
+  filtered <- vehicles[vehicles$make == make_choice & vehicles$year == year_choice, ]
+  filtered[filtered$hwy == max(filtered$hwy), "model"]
+}
+
 # What was the most efficient Honda model of 1995?
 
